@@ -1,35 +1,34 @@
 let words = [];
-let god = 'dog'
 function preload(){
   words = loadStrings('words.txt');
 }
 
-let targetRowColours
+let targetRowColours;
 let blocks = [];
-let gridOffsetX = 30;                // Initial x offset for both grids
-let gridOffsetY = 10;                // Initial y offset for the main grid
+let gridOffsetX = 60;                // Initial x offset for both grids
+let gridOffsetY = 70;                // Initial y offset for the main grid
 let targetGridOffsetX = gridOffsetX; // Target grid x offset
-let blockWidth = 100;
-let blockHeight = 60;
-let gridSize = 110;
-let rowSize = 80                   // Original row spacing for both main and target grids
+let blockWidth = 140;                // Increased block width for NYT style
+let blockHeight = 80;                // Increased block height for NYT style
+let gridSize = 150;                  // Adjusted grid size for spacing
+let rowSize = 110;                   // Adjusted row spacing for both main and target grids
 
-let targetGridOffsetY = gridOffsetY + rowSize * 4 + 20; // Adjusted y offset for the target grid
+let targetGridOffsetY = gridOffsetY + rowSize * 4 + 30; // Adjusted y offset for the target grid
 
 function setup() {
   // Define colours for target rows
   targetRowColours = [
-    color(255, 255, 150),// yellow
-    color(150, 255, 150),// green
-    color(150, 150, 255),// blue
-    color(200, 150, 255)// purple
-  ]
-  createCanvas(500, 700);
+    color(255, 255, 150), // yellow
+    color(150, 255, 150), // green
+    color(150, 150, 255), // blue
+    color(200, 150, 255)  // purple
+  ];
+  createCanvas(750, 1000); // Increase canvas size to fit larger elements
   let index = 0;
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
       let x = gridOffsetX + col * gridSize;
-      let y = gridOffsetY + row * rowSize; // Use gridSize for main grid rows
+      let y = gridOffsetY + row * rowSize;
       let b = new Block(x, y, blockWidth, blockHeight, 5, words[index]);
       blocks.push(b);
       index++;
@@ -40,13 +39,26 @@ function setup() {
 function draw() {
   background(255);
 
+  // Title
+  textSize(26);
+  textAlign(CENTER, CENTER);
+  fill(0);
+  text("Leo's Connections Helper©️", width/2, 40);
+
+  // Insturctions
+  textSize(18);
+  textAlign(CENTER, CENTER);
+  fill(0);
+  text('Drag the words onto the coloured boxs and shuffle unitl you see the connections.', width/2, 500)
+  text('Once you think you have all 4 connections, input them into the Connections Game.', width/2, 525)
+
   // Draw labels for each row of the target grid
   textAlign(RIGHT, CENTER);
   textSize(16);
   fill(0);
   for (let row = 0; row < 4; row++) {
     let labelX = targetGridOffsetX - 10;
-    let labelY = targetGridOffsetY + row * rowSize + blockHeight / 2; // Use gridSize for consistent row spacing
+    let labelY = targetGridOffsetY + row * rowSize + blockHeight / 2;
     text(`${row + 1}.`, labelX, labelY);
   }
 
@@ -67,28 +79,21 @@ function draw() {
 }
 
 function mousePressed() {
-  //  Check if the block is clicked and start dragging if so
   for (let block of blocks){
     block.pressed(mouseX, mouseY);
   }
-
 }
 
 function mouseReleased() {
-  // Stop dragging when the mouse is released
   for (let block of blocks) {
-    // Check if the block is close to any target cell in the target grid
     let snapped = false;
 
-    // Iterate over each target cell to check for snapping
     for (let row = 0; row < 4; row++) {
       for (let col = 0; col < 4; col++) {
         let targetX = targetGridOffsetX + col * gridSize;
         let targetY = targetGridOffsetY + row * rowSize;
-        // Define a snap threshold (distance to snap to target cell)
-        let snapThreshold = 50;
+        let snapThreshold = 60; // Adjust snap threshold for larger blocks
         if (dist(block.x, block.y, targetX, targetY) < snapThreshold) {
-          // Snap block to target cell
           block.x = targetX;
           block.y = targetY;
           snapped = true;
@@ -98,16 +103,10 @@ function mouseReleased() {
       if (snapped) break;
     }
 
-    // If the block didn't snap, reset it to its original position
     if (!snapped) {
       block.resetPosition();
     }
 
-    // Stop dragging
     block.release();
   }
 }
-
-
-
-
