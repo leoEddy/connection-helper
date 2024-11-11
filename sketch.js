@@ -37,7 +37,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(255);
 
   // Draw labels for each row of the target grid
   textAlign(RIGHT, CENTER);

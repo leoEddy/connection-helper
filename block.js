@@ -43,7 +43,7 @@ class Block {
     // Show the block with centred text
     show(){
         stroke(255)
-        fill(255, 125);
+        fill(200, 125);
         rect(this.x, this.y, this.w, this.h, this.r);
 
         // Centre the text on the block
