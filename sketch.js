@@ -71,21 +71,22 @@ function draw() {
 }
 
 function mousePressed() {
-  for (let block of blocks){
-    block.pressed(mouseX, mouseY);
+  handlePress(mouseX, mouseY);
+}
+
+function touchStarted() {
+  handlePress(touchX, touchY);
+  return false;
+}
+
+function handlePress(x, y) {
+  for (let block of blocks) {
+    block.pressed(x, y);
   }
 }
 
 function mouseReleased() {
   handleRelease();
-}
-
-// Touch support for mobile
-function touchStarted() {
-  for (let block of blocks) {
-    block.pressed(touchX, touchY);
-  }
-  return false;
 }
 
 function touchEnded() {
