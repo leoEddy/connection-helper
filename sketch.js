@@ -22,7 +22,7 @@ function setup() {
     color(150, 150, 255), // blue
     color(200, 150, 255)  // purple
   ];
-  createCanvas(650, 850);
+  createCanvas(600, 850);
   let index = 0;
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
@@ -77,6 +77,23 @@ function mousePressed() {
 }
 
 function mouseReleased() {
+  handleRelease();
+}
+
+// Touch support for mobile
+function touchStarted() {
+  for (let block of blocks) {
+    block.pressed(touchX, touchY);
+  }
+  return false;
+}
+
+function touchEnded() {
+  handleRelease();
+  return false;
+}
+
+function handleRelease() {
   for (let block of blocks) {
     let snapped = false;
 
