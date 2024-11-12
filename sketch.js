@@ -6,15 +6,14 @@ function preload(){
 let targetRowColours;
 let blocks = [];
 let gridOffsetX = 30;                // Initial x offset for both grids
-let gridOffsetY = 30;                // Initial y offset for the main grid
+let gridOffsetY = 80;                // Increased y offset for better title visibility
 let targetGridOffsetX = gridOffsetX; // Target grid x offset
-let blockWidth = 120;                // Increased Block width
-let blockHeight = 70;                // Increased Block height
-let gridSize = 130;                  // Increased Grid size for spacing
-let rowSize = 90;                    // Adjusted Row spacing for layout
+let blockWidth = 120;                // Block width
+let blockHeight = 70;                // Block height
+let gridSize = 130;                  // Grid size for spacing
+let rowSize = 90;                    // Row spacing for layout
 
-// Calculate target grid offset with a smaller gap
-let targetGridOffsetY = gridOffsetY + rowSize * 4 + 10; // Reduced the gap to 10
+let targetGridOffsetY = gridOffsetY + rowSize * 4 + 20; // Target grid offset, slight gap between grids
 
 function setup() {
   // Define colours for target rows
@@ -24,7 +23,7 @@ function setup() {
     color(150, 150, 255), // blue
     color(200, 150, 255)  // purple
   ];
-  createCanvas(600, 850); // Adjusted canvas height for larger blocks
+  createCanvas(600, 850); // Canvas height to fit everything
   let index = 0;
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
@@ -40,16 +39,16 @@ function setup() {
 function draw() {
   background(255);
 
-  // Title
+  // Title with adjusted position for more space
   textSize(32);
   textAlign(CENTER, CENTER);
   fill(0);
   text("Leo's Connection Helper©️", width / 2, 40);
 
-  // Instructions
+  // Instructions with slight offset for visibility
   textSize(16);
-  text("Drag the words onto the coloured boxes and shuffle until you see the connections.", width / 2, 80);
-  text("Once you think you have all 4 connections, input them into the Connections Game.", width / 2, 100);
+  text("Drag the words onto the coloured boxes and shuffle until you see the connections.", width / 2, 70);
+  text("Once you think you have all 4 connections, input them into the Connections Game.", width / 2, 90);
 
   // Draw labels for each row of the target grid
   textAlign(RIGHT, CENTER);
