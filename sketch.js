@@ -5,8 +5,8 @@ function preload(){
 
 let targetRowColours;
 let blocks = [];
-let gridOffsetX = 30;                // Initial x offset for both grids
-let gridOffsetY = 80;                // Increased y offset for better title visibility
+let gridOffsetX = 60;                // Initial x offset for both grids
+let gridOffsetY = 100;               // Increased y offset for more top spacing
 let targetGridOffsetX = gridOffsetX; // Target grid x offset
 let blockWidth = 120;                // Block width
 let blockHeight = 70;                // Block height
@@ -16,14 +16,13 @@ let rowSize = 90;                    // Row spacing for layout
 let targetGridOffsetY = gridOffsetY + rowSize * 4 + 20; // Target grid offset, slight gap between grids
 
 function setup() {
-  // Define colours for target rows
   targetRowColours = [
     color(255, 255, 150), // yellow
     color(150, 255, 150), // green
     color(150, 150, 255), // blue
     color(200, 150, 255)  // purple
   ];
-  createCanvas(600, 850); // Canvas height to fit everything
+  createCanvas(650, 850);
   let index = 0;
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
@@ -39,18 +38,15 @@ function setup() {
 function draw() {
   background(255);
 
-  // Title with adjusted position for more space
   textSize(32);
   textAlign(CENTER, CENTER);
   fill(0);
   text("Leo's Connection Helper©️", width / 2, 40);
 
-  // Instructions with slight offset for visibility
   textSize(16);
   text("Drag the words onto the coloured boxes and shuffle until you see the connections.", width / 2, 70);
   text("Once you think you have all 4 connections, input them into the Connections Game.", width / 2, 90);
 
-  // Draw labels for each row of the target grid
   textAlign(RIGHT, CENTER);
   textSize(16);
   fill(0);
@@ -60,7 +56,6 @@ function draw() {
     text(`${row + 1}.`, labelX, labelY);
   }
 
-  // Draw the target grid
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
       fill(targetRowColours[row]);
@@ -69,7 +64,6 @@ function draw() {
     }
   }
 
-  // Update and display each block
   for (let block of blocks) {
     block.drag(mouseX, mouseY);
     block.show();
