@@ -8,13 +8,13 @@ let blocks = [];
 let gridOffsetX = 30;                // Initial x offset for both grids
 let gridOffsetY = 30;                // Initial y offset for the main grid
 let targetGridOffsetX = gridOffsetX; // Target grid x offset
-let blockWidth = 110;                // Block width
-let blockHeight = 65;                // Block height
-let gridSize = 120;                  // Grid size for spacing
-let rowSize = 85;                    // Row spacing for layout
+let blockWidth = 120;                // Increased Block width
+let blockHeight = 70;                // Increased Block height
+let gridSize = 130;                  // Increased Grid size for spacing
+let rowSize = 90;                    // Adjusted Row spacing for layout
 
-// Calculate target grid offset to place 4th row at the bottom
-let targetGridOffsetY = 500; // Adjust this value to position the target grid as desired
+// Calculate target grid offset with a smaller gap
+let targetGridOffsetY = gridOffsetY + rowSize * 4 + 10; // Reduced the gap to 10
 
 function setup() {
   // Define colours for target rows
@@ -24,7 +24,7 @@ function setup() {
     color(150, 150, 255), // blue
     color(200, 150, 255)  // purple
   ];
-  createCanvas(500, 800); // Adjusted canvas height
+  createCanvas(600, 850); // Adjusted canvas height for larger blocks
   let index = 0;
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
