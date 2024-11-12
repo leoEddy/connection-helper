@@ -22,7 +22,7 @@ function setup() {
     color(150, 150, 255), // blue
     color(200, 150, 255)  // purple
   ];
-  createCanvas(600, 850);
+  createCanvas(650, 850);
   let index = 0;
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
