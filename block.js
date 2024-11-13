@@ -53,7 +53,7 @@ class Block {
       // Adjust text size based on word length
       let textSizeValue = 18; // Default text size
       if (this.t.length > 10){
-          textSizeValue = 16; // Smaller text for longer words
+          textSizeValue = 12; // Smaller text for longer words
       } 
       fill(0);
       textAlign(CENTER, CENTER);
