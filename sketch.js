@@ -1,4 +1,4 @@
-et words = [];
+let words = [];
 function preload(){
   words = loadStrings('words.txt');
 }
@@ -81,34 +81,23 @@ function mouseReleased() {
 }
 
 // Touch support for mobile
-let blockTouched = false; // Global flag to track if a block is touched
-
 function touchStarted() {
-  blockTouched = false;
   for (let block of blocks) {
-    if (block.pressed(touches[0].x, touches[0].y)) {
-      blockTouched = true;
-      break;
-    }
+    block.pressed(touches[0].x, touches[0].y); // Use the first touch point
   }
-  return blockTouched; // Prevent default only if a block was touched
+  return false;
 }
 
 function touchMoved() {
-  if (blockTouched) {
-    for (let block of blocks) {
-      block.drag(touches[0].x, touches[0].y);
-    }
+  for (let block of blocks) {
+    block.drag(touches[0].x, touches[0].y); // Move based on the first touch point
   }
-  return blockTouched; // Prevent default only if a block is being dragged
+  return false;
 }
 
 function touchEnded() {
-  if (blockTouched) {
-    handleRelease();
-  }
-  blockTouched = false; // Reset the flag
-  return blockTouched; // Allow scrolling after touch ends
+  handleRelease();
+  return false;
 }
 
 function handleRelease() {
