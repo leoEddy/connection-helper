@@ -1,5 +1,4 @@
 let words = [];
-let god = 'dog'
 function preload(){
   words = loadStrings('words.txt');
 }
@@ -83,30 +82,20 @@ function mouseReleased() {
 
 // Touch support for mobile
 function touchStarted() {
-  if (touches.length > 0) {
-    const tx = touches[0].x;
-    const ty = touches[0].y;
-    console.log("Touch started at:", tx, ty);
-    for (let block of blocks) {
-      block.pressed(tx, ty);
-    }
+  for (let block of blocks) {
+    block.pressed(touches[0].x, touches[0].y); // Use the first touch point
   }
   return false;
 }
 
 function touchMoved() {
-  if (touches.length > 0) {
-    const tx = touches[0].x;
-    const ty = touches[0].y;
-    for (let block of blocks) {
-      block.drag(tx, ty);
-    }
+  for (let block of blocks) {
+    block.drag(touches[0].x, touches[0].y); // Move based on the first touch point
   }
   return false;
 }
 
 function touchEnded() {
-  console.log("Touch ended");
   handleRelease();
   return false;
 }
@@ -121,7 +110,6 @@ function handleRelease() {
         let targetY = targetGridOffsetY + row * rowSize;
         let snapThreshold = 50;
         if (dist(block.x, block.y, targetX, targetY) < snapThreshold) {
-          console.log("Block snapped to target at:", targetX, targetY);
           block.x = targetX;
           block.y = targetY;
           snapped = true;
@@ -132,7 +120,6 @@ function handleRelease() {
     }
 
     if (!snapped) {
-      console.log("Block returned to initial position:", block.initialX, block.initialY);
       block.resetPosition();
     }
 
