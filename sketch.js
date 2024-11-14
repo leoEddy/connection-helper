@@ -82,6 +82,7 @@ function mouseReleased() {
 
 // Touch support for mobile
 function touchStarted() {
+  console.log("Touch started at:", touchX, touchY);
   for (let block of blocks) {
     block.pressed(touchX, touchY);
   }
@@ -89,6 +90,7 @@ function touchStarted() {
 }
 
 function touchMoved() {
+  console.log("Touch moved to:", touchX, touchY);
   for (let block of blocks) {
     block.drag(touchX, touchY);
   }
@@ -96,6 +98,7 @@ function touchMoved() {
 }
 
 function touchEnded() {
+  console.log("Touch ended");
   handleRelease();
   return false;
 }
@@ -110,6 +113,7 @@ function handleRelease() {
         let targetY = targetGridOffsetY + row * rowSize;
         let snapThreshold = 50;
         if (dist(block.x, block.y, targetX, targetY) < snapThreshold) {
+          console.log("Block snapped to target at:", targetX, targetY);
           block.x = targetX;
           block.y = targetY;
           snapped = true;
@@ -120,6 +124,7 @@ function handleRelease() {
     }
 
     if (!snapped) {
+      console.log("Block returned to initial position:", block.initialX, block.initialY);
       block.resetPosition();
     }
 
