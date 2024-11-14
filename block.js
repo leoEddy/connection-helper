@@ -21,14 +21,19 @@ class Block {
         // Calculate offset so block movement is smooth
         this.offsetX = this.x - px;
         this.offsetY = this.y - py;
+        return true; // Indicate that this block was touched
        }   
+       return false; // Not touched
     }
+    
     // Update position if dragging
     drag(px, py){
         if (this.dragging) {
             this.x = px + this.offsetX;
             this.y = py + this.offsetY;
+            return true; // Indicate that this block is moving
         }
+        return false; // Not moving
     }
 
     // Stop dragging on release

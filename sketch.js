@@ -82,17 +82,23 @@ function mouseReleased() {
 
 // Touch support for mobile
 function touchStarted() {
+  let blockTouched = false;
   for (let block of blocks) {
-    block.pressed(touches[0].x, touches[0].y); // Use the first touch point
+    if (block.pressed(touches[0].x, touches[0].y)) {
+      blockTouched = true;
+    }
   }
-  return false;
+  return blockTouched; // Only prevent default if a block is touched
 }
 
 function touchMoved() {
+  let blockMoved = false;
   for (let block of blocks) {
-    block.drag(touches[0].x, touches[0].y); // Move based on the first touch point
+    if (block.drag(touches[0].x, touches[0].y)) {
+      blockMoved = true;
+    }
   }
-  return false;
+  return blockMoved; // Only prevent default if a block is moved
 }
 
 function touchEnded() {
