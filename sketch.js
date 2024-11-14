@@ -84,31 +84,49 @@ function mouseReleased() {
 let blockTouched = false; // Global flag to track if a block is touched
 
 function touchStarted() {
-  blockTouched = false;
-  for (let block of blocks) {
-    if (block.pressed(touches[0].x, touches[0].y)) {
-      blockTouched = true;
-      break;
+  let blockTouched = false;
+
+  if (touches.length > 0) {
+    let tx = touches[0].x;
+    let ty = touches[0].y;
+  
+    // Check if any block is being touched
+    for (let block of blocks) {
+      if (block.isTouchWithin(tx, ty)) {
+        block.pressed(tx, ty);
+        blockTouched = true;
+        break;
+      }
     }
   }
-  return blockTouched; // Prevent default only if a block was touched
+
+  // If no block was touched, allow the page to scroll
+  return blockTouched ? false : true;
 }
 
 function touchMoved() {
-  if (blockTouched) {
+  let blockDragged = false;
+
+  if (touches.length > 0) {
+    let tx = touches[0].x;
+    let ty = touches[0].y;
+
+    // Update position of the block if it's being dragged
     for (let block of blocks) {
-      block.drag(touches[0].x, touches[0].y);
+      if (block.dragging) {
+        block.drag(tx, ty);
+        blockDragged = true;
+      }
     }
   }
-  return blockTouched; // Prevent default only if a block is being dragged
+
+  // Prevent page scroll if dragging a block
+  return blockDragged ? false : true;
 }
 
 function touchEnded() {
-  if (blockTouched) {
-    handleRelease();
-  }
-  blockTouched = false; // Reset the flag
-  return blockTouched; // Allow scrolling after touch ends
+  handleRelease();
+  return false;
 }
 
 function handleRelease() {

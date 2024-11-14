@@ -63,4 +63,8 @@ class Block {
         textSize(textSizeValue)
         text(this.t, this.x + this.w/2, this.y + this.h/2);
     }
+    // Check if a touch point is within this block's bounds
+    isTouchWithin(px, py) {
+        return px > this.x && px < this.x + this.w && py > this.y && py < this.y + this.h;
+   } 
 }
