@@ -1,4 +1,5 @@
 let words = [];
+let god = 'dog'
 function preload(){
   words = loadStrings('words.txt');
 }
