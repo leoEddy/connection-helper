@@ -82,17 +82,24 @@ function mouseReleased() {
 
 // Touch support for mobile
 function touchStarted() {
-  console.log("Touch started at:", touchX, touchY);
-  for (let block of blocks) {
-    block.pressed(touchX, touchY);
+  if (touches.length > 0) {
+    const tx = touches[0].x;
+    const ty = touches[0].y;
+    console.log("Touch started at:", tx, ty);
+    for (let block of blocks) {
+      block.pressed(tx, ty);
+    }
   }
   return false;
 }
 
 function touchMoved() {
-  console.log("Touch moved to:", touchX, touchY);
-  for (let block of blocks) {
-    block.drag(touchX, touchY);
+  if (touches.length > 0) {
+    const tx = touches[0].x;
+    const ty = touches[0].y;
+    for (let block of blocks) {
+      block.drag(tx, ty);
+    }
   }
   return false;
 }
