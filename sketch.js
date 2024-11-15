@@ -5,8 +5,8 @@ function preload(){
 
 let targetRowColours;
 let blocks = [];
-let gridOffsetX = 60;                // Initial x offset for both grids
-let gridOffsetY = 100;               // Increased y offset for more top spacing
+let gridOffsetX = 5;                // Initial x offset for both grids
+let gridOffsetY = 5;               // Increased y offset for more top spacing
 let targetGridOffsetX = gridOffsetX; // Target grid x offset
 let blockWidth = 120;                // Block width
 let blockHeight = 70;                // Block height
@@ -22,7 +22,7 @@ function setup() {
     color(150, 150, 255), // blue
     color(200, 150, 255)  // purple
   ];
-  createCanvas(650, 850);
+  createCanvas(520, 900);
   let index = 0;
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
@@ -38,23 +38,23 @@ function setup() {
 function draw() {
   background(255);
 
-  textSize(32);
-  textAlign(CENTER, CENTER);
-  fill(0);
-  text("Leo's Connection Helper©️", width / 2, 40);
+  // textSize(32);
+  // textAlign(CENTER, CENTER);
+  // fill(0);
+  // text("Leo's Connection Helper©️", width / 2, 40);
 
-  textSize(16);
-  text("Drag the words onto the coloured boxes and shuffle until you see the connections.", width / 2, 70);
-  text("Once you think you have all 4 connections, input them into the Connections Game.", width / 2, 90);
+  // textSize(16);
+  // text("Drag the words onto the coloured boxes and shuffle until you see the connections.", width / 2, 70);
+  // text("Once you think you have all 4 connections, input them into the Connections Game.", width / 2, 90);
 
-  textAlign(RIGHT, CENTER);
-  textSize(16);
-  fill(0);
-  for (let row = 0; row < 4; row++) {
-    let labelX = targetGridOffsetX - 10;
-    let labelY = targetGridOffsetY + row * rowSize + blockHeight / 2;
-    text(`${row + 1}.`, labelX, labelY);
-  }
+  // textAlign(RIGHT, CENTER);
+  // textSize(16);
+  // fill(0);
+  // for (let row = 0; row < 4; row++) {
+  //   let labelX = targetGridOffsetX - 10;
+  //   let labelY = targetGridOffsetY + row * rowSize + blockHeight / 2;
+  //   text(`${row + 1}.`, labelX, labelY);
+  // }
 
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
