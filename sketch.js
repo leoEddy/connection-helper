@@ -6,7 +6,7 @@ function preload(){
 let targetRowColours;
 let blocks = [];
 let gridOffsetX = 5;                // Initial x offset for both grids
-let gridOffsetY = 5;               // Increased y offset for more top spacing
+let gridOffsetY = 70;               // Increased y offset for more top spacing
 let targetGridOffsetX = gridOffsetX; // Target grid x offset
 let blockWidth = 120;                // Block width
 let blockHeight = 70;                // Block height
@@ -38,10 +38,10 @@ function setup() {
 function draw() {
   background(255);
 
-  // textSize(32);
-  // textAlign(CENTER, CENTER);
-  // fill(0);
-  // text("Leo's Connection Helper©️", width / 2, 40);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  fill(0);
+  text("Leo's Connection Helper©️", width / 2, 40);
 
   // textSize(16);
   // text("Drag the words onto the coloured boxes and shuffle until you see the connections.", width / 2, 70);
