@@ -54,8 +54,8 @@ class Block {
 
         // Center the text on the block
         let textSizeValue = 18; // Default text size
-        if (this.t.length > 10){
-            textSizeValue = 16; // Smaller text for longer words
+        if (this.t.length > 9){
+            textSizeValue = 14; // Smaller text for longer words
         } 
         fill(0);
         textAlign(CENTER, CENTER);
