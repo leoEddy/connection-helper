@@ -1,78 +1,95 @@
 let words = [];
-function preload(){
+function preload() {
   words = loadStrings('words.txt');
 }
 
 let targetRowColours;
 let blocks = [];
-let gridOffsetX = 5;                // Initial x offset for both grids
-let gridOffsetY = 70;               // Increased y offset for more top spacing
-let targetGridOffsetX = gridOffsetX; // Target grid x offset
-let blockWidth = 120;                // Block width
-let blockHeight = 70;                // Block height
-let gridSize = 130;                  // Grid size for spacing
-let rowSize = 90;                    // Row spacing for layout
-
-let targetGridOffsetY = gridOffsetY + rowSize * 4 + 20; // Target grid offset, slight gap between grids
+let gridOffsetX;
+let gridOffsetY;
+let targetGridOffsetX;
+let targetGridOffsetY;
+let blockWidth;
+let blockHeight;
+let gridSize;
+let rowSize;
 
 function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+  // Set up colors for the target rows
   targetRowColours = [
-    color(255, 255, 150), // yellow
-    color(150, 255, 150), // green
-    color(150, 150, 255), // blue
-    color(200, 150, 255)  // purple
+    color(255, 255, 150),
+    color(150, 255, 150),
+    color(150, 150, 255),
+    color(200, 150, 255),
   ];
-  createCanvas(520, 900);
-  let index = 0;
-  for (let row = 0; row < 4; row++) {
-    for (let col = 0; col < 4; col++) {
-      let x = gridOffsetX + col * gridSize;
-      let y = gridOffsetY + row * rowSize;
-      let b = new Block(x, y, blockWidth, blockHeight, 5, words[index]);
-      blocks.push(b);
-      index++;
-    }
-  }
+
+  gridOffsetX = width * 0.02; // Left margin
+  gridOffsetY = height * 0.07; // Top margin
+
+  blockWidth = width / 4.5;
+  blockHeight = height / 12;
+  gridSize = blockWidth * 1.1;
+  rowSize = blockHeight * 1.3;
+
+  // Ensure the target grid is positioned below the word blocks
+  targetGridOffsetX = gridOffsetX;
+  targetGridOffsetY = gridOffsetY + 4 * rowSize + 50; // Add spacing after word blocks
+
+  initializeBlocks(); // Create all blocks
 }
 
 function draw() {
   background(255);
 
-  textSize(32);
+  // Title text
+  textSize(width / 20);
   textAlign(CENTER, CENTER);
   fill(0);
-  text("Leo's Connection Helper©️", width / 2, 40);
+  text("Leo's Connection Helper©️", width / 2, gridOffsetY / 2);
 
-  // textSize(16);
-  // text("Drag the words onto the coloured boxes and shuffle until you see the connections.", width / 2, 70);
-  // text("Once you think you have all 4 connections, input them into the Connections Game.", width / 2, 90);
+    // Instruction text
+  textSize(width / 30);
+  fill(100); // Slightly lighter color for the instructions
+  text(
+    "Drag and shuffle the blocks to guess the 4 connections.\n Then input them on the NYT Connections site!",
+    width / 2,
+    gridOffsetY + 4 * rowSize + 15 // Position instructions above the grid
+  );
 
-  // textAlign(RIGHT, CENTER);
-  // textSize(16);
-  // fill(0);
-  // for (let row = 0; row < 4; row++) {
-  //   let labelX = targetGridOffsetX - 10;
-  //   let labelY = targetGridOffsetY + row * rowSize + blockHeight / 2;
-  //   text(`${row + 1}.`, labelX, labelY);
-  // }
-
+  // Render the target grid
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
       fill(targetRowColours[row]);
       stroke(180);
-      rect(targetGridOffsetX + col * gridSize, targetGridOffsetY + row * rowSize, blockWidth, blockHeight, 5);
+      rect(
+        targetGridOffsetX + col * gridSize,
+        targetGridOffsetY + row * rowSize,
+        blockWidth,
+        blockHeight,
+        10
+      );
     }
   }
 
+  // Render all blocks
   for (let block of blocks) {
-    block.drag(mouseX, mouseY);
-    block.show();
+    block.show(); // Ensure every block is displayed
   }
 }
 
+// Handle both mouse and touch interactions
 function mousePressed() {
-  for (let block of blocks){
-    block.pressed(mouseX, mouseY);
+  for (let block of blocks) {
+    block.pressed(mouseX, mouseY); // Use mouse coordinates
+    if (block.dragging) break; // Stop if a block is being dragged
+  }
+}
+
+function mouseDragged() {
+  for (let block of blocks) {
+    block.drag(mouseX, mouseY); // Use mouse coordinates
   }
 }
 
@@ -80,73 +97,102 @@ function mouseReleased() {
   handleRelease();
 }
 
-// Touch support for mobile
-let blockTouched = false; // Global flag to track if a block is touched
-
 function touchStarted() {
   if (touches.length > 0) {
     const tx = touches[0].x;
     const ty = touches[0].y;
 
-    // Check if a block is being touched
     for (let block of blocks) {
-      if (block.isTouchWithin(tx, ty)) {
-        block.pressed(tx, ty);
-        return false;  // Prevent scrolling if interacting with a block
-      }
+      block.pressed(tx, ty); // Use touch coordinates
+      if (block.dragging) break; // Stop if a block is being dragged
     }
+    return false; // Prevent default touch behavior (like scrolling)
   }
-  return true;  // Allow page scroll if not touching a block
+  return true;
 }
 
 function touchMoved() {
-  let blockDragged = false;
-
   if (touches.length > 0) {
     const tx = touches[0].x;
     const ty = touches[0].y;
 
-    // Move block only if it's already being dragged
     for (let block of blocks) {
-      if (block.dragging) {
-        block.drag(tx, ty);
-        blockDragged = true;
-      }
+      block.drag(tx, ty); // Use touch coordinates
     }
+    return false; // Prevent default touch behavior
   }
-
-  // Prevent page scroll if dragging a block, otherwise allow it
-  return blockDragged ? false : true;
+  return true;
 }
 
 function touchEnded() {
   handleRelease();
-  return false;  // Prevent any accidental page scroll on touch end
+  return false; // Prevent default touch behavior
 }
 
 function handleRelease() {
   for (let block of blocks) {
     let snapped = false;
 
-    for (let row = 0; row < 4; row++) {
-      for (let col = 0; col < 4; col++) {
-        let targetX = targetGridOffsetX + col * gridSize;
-        let targetY = targetGridOffsetY + row * rowSize;
-        let snapThreshold = 50;
-        if (dist(block.x, block.y, targetX, targetY) < snapThreshold) {
-          block.x = targetX;
-          block.y = targetY;
-          snapped = true;
-          break;
-        }
-      }
-      if (snapped) break;
+    // Calculate the block's center
+    const blockCenterX = block.x + blockWidth / 2;
+    const blockCenterY = block.y + blockHeight / 2;
+
+    // Calculate the closest grid cell
+    const closestCol = Math.floor((blockCenterX - targetGridOffsetX) / gridSize);
+    const closestRow = Math.floor((blockCenterY - targetGridOffsetY) / rowSize);
+
+    // Ensure the calculated grid cell is within bounds
+    if (
+      closestCol >= 0 &&
+      closestCol < 4 &&
+      closestRow >= 0 &&
+      closestRow < 4
+    ) {
+      // Snap the block to the center of the calculated grid cell
+      block.x = targetGridOffsetX + closestCol * gridSize;
+      block.y = targetGridOffsetY + closestRow * rowSize;
+      snapped = true;
     }
 
+    // If the block wasn't snapped, reset its position
     if (!snapped) {
       block.resetPosition();
     }
 
+    // Reset dragging state for the block
     block.release();
   }
+}
+
+function initializeBlocks() {
+  blocks = [];
+  let index = 0;
+
+  for (let row = 0; row < 4; row++) {
+    for (let col = 0; col < 4; col++) {
+      let x = gridOffsetX + col * gridSize;
+      let y = gridOffsetY + row * rowSize;
+      let b = new Block(x, y, blockWidth, blockHeight, 10, words[index]);
+      blocks.push(b);
+      index++;
+    }
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+
+  gridOffsetX = width * 0.02;
+  gridOffsetY = height * 0.05;
+
+  blockWidth = width / 4.5;
+  blockHeight = height / 12;
+  gridSize = blockWidth * 1.1;
+  rowSize = blockHeight * 1.3;
+
+  // Ensure the target grid is positioned below the word blocks
+  targetGridOffsetX = gridOffsetX;
+  targetGridOffsetY = gridOffsetY + 4 * rowSize + 50; // Add spacing after word blocks
+
+  initializeBlocks();
 }

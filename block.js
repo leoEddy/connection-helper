@@ -1,70 +1,72 @@
-// Block class remains the same
 class Block {
-    constructor(x, y, w, h, r, t){
-        this.initialX = x; // Save initial position
-        this.initialY = y;
-        this.x = x;
-        this.y = y;
-        this.w = w;
-        this.h = h;
-        this.r = r;
-        this.t = t
-        this.dragging = false; // Track if block is being pressed
-        this.offsetX = 0;  // To store offset when clicking on block
-        this.offsetY = 0;
+    constructor(x, y, w, h, r, label) {
+      this.x = x;
+      this.y = y;
+      this.width = w;
+      this.height = h;
+      this.radius = r;
+      this.label = label;
+      this.dragging = false;
+      this.offsetX = 0;
+      this.offsetY = 0;
+      this.startX = x;
+      this.startY = y;
     }
-
-    // Check if block is clicked, if so, start dragging
-    pressed(px, py){
-       if (px > this.x && px < this.x + this.w && py > this.y && py < this.y + this.h){
+  
+    show() {
+      fill(220, 100);
+      noStroke();
+      strokeWeight(1);
+      rect(this.x, this.y, this.width, this.height, this.radius);
+  
+      // Adjust text size to fit the block
+      let textSizeValue = 16; // Default text size
+      if (this.label.length > 7){
+          textSizeValue = 12; // Smaller text for longer words
+      } 
+      textSize(textSizeValue);
+      textStyle(BOLD);
+      fill(0);
+      noStroke();
+      textAlign(CENTER, CENTER);
+      text(this.label, this.x + this.width / 2, this.y + this.height / 2);
+    }
+  
+    pressed(px, py) {
+      if (
+        px > this.x &&
+        px < this.x + this.width &&
+        py > this.y &&
+        py < this.y + this.height
+      ) {
         this.dragging = true;
-        // Calculate offset so block movement is smooth
         this.offsetX = this.x - px;
         this.offsetY = this.y - py;
-        return true; // Indicate that this block was touched
-       }   
-       return false; // Not touched
+      }
     }
-    
-    // Update position if dragging
-    drag(px, py){
-        if (this.dragging) {
-            this.x = px + this.offsetX;
-            this.y = py + this.offsetY;
-            return true; // Indicate that this block is moving
-        }
-        return false; // Not moving
+  
+    drag(px, py) {
+      if (this.dragging) {
+        this.x = px + this.offsetX;
+        this.y = py + this.offsetY;
+      }
     }
-
-    // Stop dragging on release
-    release(){
-        this.dragging = false;
+  
+    release() {
+      this.dragging = false;
     }
-
-    resetPosition(){
-        this.x = this.initialX;
-        this.y = this.initialY;
+  
+    resetPosition() {
+      this.x = this.startX;
+      this.y = this.startY;
     }
-
-    // Show the block with centered text
-    show(){
-        stroke(255)
-        fill(200, 125);
-        rect(this.x, this.y, this.w, this.h, this.r);
-
-        // Center the text on the block
-        let textSizeValue = 18; // Default text size
-        if (this.t.length > 9){
-            textSizeValue = 14; // Smaller text for longer words
-        } 
-        fill(0);
-        textAlign(CENTER, CENTER);
-        textStyle(BOLD)
-        textSize(textSizeValue)
-        text(this.t, this.x + this.w/2, this.y + this.h/2);
+  
+    isTouchWithin(tx, ty) {
+      return (
+        tx > this.x &&
+        tx < this.x + this.width &&
+        ty > this.y &&
+        ty < this.y + this.height
+      );
     }
-    // Check if a touch point is within this block's bounds
-    isTouchWithin(px, py) {
-        return px > this.x && px < this.x + this.w && py > this.y && py < this.y + this.h;
-   } 
-}
+  }
