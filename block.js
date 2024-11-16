@@ -20,9 +20,9 @@ class Block {
       rect(this.x, this.y, this.width, this.height, this.radius);
   
       // Adjust text size to fit the block
-      let textSizeValue = 16; // Default text size
-      if (this.label.length > 7){
-          textSizeValue = 12; // Smaller text for longer words
+      let textSizeValue = width/30; // Default text size
+      if (this.label.length > 9){
+          textSizeValue = width/40; // Smaller text for longer words
       } 
       textSize(textSizeValue);
       textStyle(BOLD);
