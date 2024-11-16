@@ -47,7 +47,7 @@ function draw() {
   textSize(width / 20);
   textAlign(CENTER, CENTER);
   fill(0);
-  text("Leo's Connection Helper©️", width / 2, gridOffsetY / 2);
+  text("Eddy's Connection Helper©️", width / 2, gridOffsetY / 2);
 
     // Instruction text
   textSize(width / 30);
