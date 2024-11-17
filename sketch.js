@@ -1,7 +1,6 @@
 let words = [];
 function preload() {
-  words = loadStrings('words.txt');
-}
+  words = loadStrings('words.txt?' + new Date().getTime());}
 
 let targetRowColours;
 let blocks = [];
