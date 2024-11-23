@@ -21,9 +21,11 @@ class Block {
   
       // Adjust text size to fit the block
       let textSizeValue = width/30; // Default text size
-      if (this.label.length > 9){
-          textSizeValue = width/35; // Smaller text for longer words
-      } 
+      if (this.label.length > 12)  {
+        textSizeValue = width/40
+      }else if (this.label.length > 9){
+              textSizeValue = width/35; // Smaller text for longer words
+          } 
       textSize(textSizeValue);
       textStyle(BOLD);
       fill(0);
