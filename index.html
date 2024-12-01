@@ -12,19 +12,7 @@
   </head>
 
   <body>
-    <!-- Add a div to display the timestamp -->
-    <div id="timestamp" style="font-size: 14px; color: gray; margin-top: 10px; text-align: center;"></div>
-
-    <!-- Your sketch and block scripts -->
     <script src="sketch.js"></script>
     <script src="block.js"></script>
-
-    <!-- Add the timestamp script -->
-    <script>
-      // Add the current timestamp dynamically
-      const now = new Date();
-      const timestampElement = document.getElementById("timestamp");
-      timestampElement.textContent = `Last updated: ${now.toLocaleString()}`;
-    </script>
   </body>
 </html>
