@@ -12,6 +12,12 @@ let blockWidth;
 let blockHeight;
 let gridSize;
 let rowSize;
+let today = new Date()
+let year = today.getFullYear() % 100
+let month = today.toLocaleString('en-CA', {month: 'short'})
+let day = String(today.getDate()).padStart(2, '0')
+let formattedDate = `${day} ${month} ${year}`
+console.log(formattedDate)
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -46,7 +52,7 @@ function draw() {
   textSize(width / 20);
   textAlign(CENTER, CENTER);
   fill(0);
-  text("Leo's Connection Helper©️", width / 2, gridOffsetY / 2);
+  text(`${formattedDate} Leo's Connection Helper©️`, width / 2, gridOffsetY / 2);
 
     // Instruction text
   textSize(width / 30);
