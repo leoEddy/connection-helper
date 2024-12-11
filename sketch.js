@@ -24,10 +24,10 @@ function setup() {
 
   // Set up colors for the target rows
   targetRowColours = [
-    color(255, 255, 150),
-    color(150, 255, 150),
-    color(150, 150, 255),
-    color(200, 150, 255),
+    color(255, 255, 100),
+    color(100, 255, 100),
+    color(100, 100, 255),
+    color(200, 100, 255),
   ];
 
   gridOffsetX = width * 0.02; // Left margin
