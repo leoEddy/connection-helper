@@ -14,8 +14,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          RAW_URL="https://raw.githubusercontent.com/leoEddy/connection-helper/refs/heads/main/words.txt"
-
+          RAW_URL="https://raw.githubusercontent.com/leoEddy/connection-helper/refs/heads/main/wordzz.txt"
           HDRS="$(curl -sI "$RAW_URL")" || { echo "::error ::Failed to fetch headers"; exit 1; }
           LM="$(printf '%s\n' "$HDRS" | awk -F': ' 'tolower($1)=="last-modified"{print $2}' | tr -d '\r')"
 
