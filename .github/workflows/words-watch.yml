@@ -1,37 +1,71 @@
 name: Words Watch (email on failure)
 
 on:
+  # Runs every night at 12:15 AM Pacific
   schedule:
-    - cron: "15 08 * * *"   # PST 12:15am
-    - cron: "15 07 * * *"   # PDT 12:15am
-  workflow_dispatch: {}
+    - cron: "15 08 * * *"  # Standard Time (UTC-8 → 12:15 AM PT)
+    - cron: "15 07 * * *"  # Daylight Time (UTC-7 → 12:15 AM PDT)
+  workflow_dispatch:
 
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - name: Check Last-Modified of words.txt
-        shell: bash
+        id: chk
+        env:
+          RAW_URL: "https://raw.githubusercontent.com/leoEddy/connection-helper/main/words.txt"
         run: |
-          set -euo pipefail
-          RAW_URL="https://raw.githubusercontent.com/leoEddy/connection-helper/refs/heads/main/wordzz.txt"
-          HDRS="$(curl -sI "$RAW_URL")" || { echo "::error ::Failed to fetch headers"; exit 1; }
-          LM="$(printf '%s\n' "$HDRS" | awk -F': ' 'tolower($1)=="last-modified"{print $2}' | tr -d '\r')"
+          set -e
+          HDRS=$(curl -sI "$RAW_URL")
+          LM=$(printf "%s\n" "$HDRS" | awk -F': ' 'tolower($1)=="last-modified"{print $2}' | tr -d '\r')
 
-          if [[ -z "${LM:-}" ]]; then
-            echo "::error ::No Last-Modified header (network/URL issue)."
+          if [ -z "$LM" ]; then
+            echo "ok=false" >> $GITHUB_OUTPUT
+            echo "lm_pt=unknown" >> $GITHUB_OUTPUT
+            echo "reason=No Last-Modified header" >> $GITHUB_OUTPUT
             exit 1
           fi
 
-          LM_PT="$(TZ=America/Vancouver date -d "$LM" '+%Y-%m-%d %H:%M')"
-          FILE_DAY_PT="$(TZ=America/Vancouver date -d "$LM" '+%Y-%m-%d')"
-          TODAY_PT="$(TZ=America/Vancouver date '+%Y-%m-%d')"
+          LM_TS=$(date -d "$LM" +%s)
+          NOW_TS=$(date -u +%s)
+          DIFF_HOURS=$(( (NOW_TS - LM_TS) / 3600 ))
 
-          echo "Last-Modified (PT): $LM_PT"
+          echo "File last modified: $LM"
+          echo "Hours since update: $DIFF_HOURS"
 
-          if [[ "$FILE_DAY_PT" != "$TODAY_PT" ]]; then
-            echo "::error ::words.txt NOT updated today. Last (PT): $LM_PT"
-            exit 1   # ❌ triggers GitHub email/push
+          if [ "$DIFF_HOURS" -gt 2 ]; then
+            echo "ok=false" >> $GITHUB_OUTPUT
+            echo "lm_pt=$LM" >> $GITHUB_OUTPUT
+            echo "reason=File not updated within 2 hours" >> $GITHUB_OUTPUT
+            exit 1
           fi
 
-          echo "✅ words.txt is up to date for today."
+          echo "ok=true" >> $GITHUB_OUTPUT
+          echo "lm_pt=$LM" >> $GITHUB_OUTPUT
+          echo "reason=File updated recently" >> $GITHUB_OUTPUT
+
+  notify:
+    needs: check
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send failure email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.GMAIL_USER }}
+          password: ${{ secrets.GMAIL_PASS }}
+          subject: "⚠️ Connections Helper: words.txt was NOT updated"
+          to: leoeddy@gmail.com
+          from: "GitHub Actions <leoeddy@gmail.com>"
+          body: |
+            The file **words.txt** was not updated as expected at 12:10 AM Pacific.
+
+            Check the automation that pushes the new words list to GitHub.
+
+            - Workflow: Words Watch (email on failure)
+            - Repository: leoEddy/connection-helper
+            - Timestamp: ${{ steps.chk.outputs.lm_pt }}
+            - Reason: ${{ steps.chk.outputs.reason }}
