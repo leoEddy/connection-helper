@@ -1,0 +1,49 @@
+name: Words Watch (Email)
+
+on:
+  # Runs every day at 12:15am Pacific
+  schedule:
+    - cron: "15 08 * * *"   # Standard Time (UTC-8 → 12:15am PT)
+    - cron: "15 07 * * *"   # Daylight Time (UTC-7 → 12:15am PDT)
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check last modified date of words.txt
+        id: check
+        run: |
+          set -e
+          RAW_URL="https://raw.githubusercontent.com/leoEddy/connection-helper/refs/heads/main/words.txt"
+          HDRS=$(curl -sI "$RAW_URL")
+          LAST_MOD=$(echo "$HDRS" | awk -F': ' 'tolower($1)=="last-modified"{print $2}' | tr -d '\r')
+
+          if [ -z "$LAST_MOD" ]; then
+            echo "No Last-Modified header found."
+            echo "ok=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          FILE_TIME=$(date -d "$LAST_MOD" +%s)
+          NOW=$(date -u +%s)
+          DIFF=$(( (NOW - FILE_TIME) / 3600 ))
+
+          if [ $DIFF -gt 24 ]; then
+            echo "ok=false" >> $GITHUB_OUTPUT
+          else
+            echo "ok=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send email alert if file not updated
+        if: steps.check.outputs.ok == 'false'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.ALERT_EMAIL_USER }}
+          password: ${{ secrets.ALERT_EMAIL_PASS }}
+          subject: "⚠️ words.txt not updated on GitHub!"
+          to: leoeddy@gmail.com
+          from: "Words Watch <${{ secrets.ALERT_EMAIL_USER }}>"
+          body: "The words.txt file in your Connections Helper repository has not been updated in the past 24 hours. Check your automation!"
