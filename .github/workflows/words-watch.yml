@@ -1,53 +1,77 @@
 name: Words Watch (email on failure)
 
 on:
-  # Runs every night at 12:15 AM Pacific
+  # 12:15 AM Pacific: 07:15 UTC (PDT) or 08:15 UTC (PST)
   schedule:
-    - cron: "15 08 * * *"  # Standard Time (UTC-8 → 12:15 AM PT)
-    - cron: "15 07 * * *"  # Daylight Time (UTC-7 → 12:15 AM PDT)
+    - cron: "15 07 * * *"
+    - cron: "15 08 * * *"
   workflow_dispatch:
 
 jobs:
   check:
     runs-on: ubuntu-latest
+    outputs:
+      in_window: ${{ steps.gate.outputs.in_window }}
+      lm_pt: ${{ steps.chk.outputs.lm_pt }}
+      reason: ${{ steps.chk.outputs.reason }}
     steps:
-      - name: Check Last-Modified of words.txt
+      - name: Gate — only proceed at 00:15 PT
+        id: gate
+        shell: bash
+        run: |
+          NOW_PT=$(TZ=America/Vancouver date +'%H:%M')
+          if [ "$NOW_PT" = "00:15" ]; then
+            echo "in_window=true" >> "$GITHUB_OUTPUT"
+            echo "Proceeding at $NOW_PT PT"
+          else
+            echo "in_window=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping run at $NOW_PT PT (not the 00:15 window)."
+          fi
+
+      - name: Check Last-Modified of words.txt (must be today PT)
+        if: steps.gate.outputs.in_window == 'true'
         id: chk
         env:
           RAW_URL: "https://raw.githubusercontent.com/leoEddy/connection-helper/main/words.txt"
+        shell: bash
         run: |
-          set -e
+          set -euo pipefail
+
           HDRS=$(curl -sI "$RAW_URL")
           LM=$(printf "%s\n" "$HDRS" | awk -F': ' 'tolower($1)=="last-modified"{print $2}' | tr -d '\r')
 
-          if [ -z "$LM" ]; then
-            echo "ok=false" >> $GITHUB_OUTPUT
-            echo "lm_pt=unknown" >> $GITHUB_OUTPUT
-            echo "reason=No Last-Modified header" >> $GITHUB_OUTPUT
+          if [ -z "${LM:-}" ]; then
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "lm_pt=unknown" >> "$GITHUB_OUTPUT"
+            echo "reason=No Last-Modified header" >> "$GITHUB_OUTPUT"
             exit 1
           fi
 
-          LM_TS=$(date -d "$LM" +%s)
-          NOW_TS=$(date -u +%s)
-          DIFF_HOURS=$(( (NOW_TS - LM_TS) / 3600 ))
+          # Timestamps
+          LM_TS_UTC=$(date -d "$LM" +%s)
+          TODAY_PT=$(TZ=America/Vancouver date +%F)
+          SOD_PT_UTC=$(TZ=America/Vancouver date -d "$TODAY_PT 00:00" +%s)
 
-          echo "File last modified: $LM"
-          echo "Hours since update: $DIFF_HOURS"
+          # Format the Last-Modified in PT for the email
+          LM_PT_FMT=$(TZ=America/Vancouver date -d "@$LM_TS_UTC" +'%Y-%m-%d %H:%M:%S %Z')
 
-          if [ "$DIFF_HOURS" -gt 2 ]; then
-            echo "ok=false" >> $GITHUB_OUTPUT
-            echo "lm_pt=$LM" >> $GITHUB_OUTPUT
-            echo "reason=File not updated within 2 hours" >> $GITHUB_OUTPUT
+          echo "File Last-Modified (PT): $LM_PT_FMT"
+          echo "Start of today PT in UTC epoch: $SOD_PT_UTC"
+
+          if [ "$LM_TS_UTC" -lt "$SOD_PT_UTC" ]; then
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "lm_pt=$LM_PT_FMT" >> "$GITHUB_OUTPUT"
+            echo "reason=Not updated today (PT)" >> "$GITHUB_OUTPUT"
             exit 1
           fi
 
-          echo "ok=true" >> $GITHUB_OUTPUT
-          echo "lm_pt=$LM" >> $GITHUB_OUTPUT
-          echo "reason=File updated recently" >> $GITHUB_OUTPUT
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+          echo "lm_pt=$LM_PT_FMT" >> "$GITHUB_OUTPUT"
+          echo "reason=Updated today (PT)" >> "$GITHUB_OUTPUT"
 
   notify:
     needs: check
-    if: failure()
+    if: failure() && needs.check.outputs.in_window == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Send failure email
@@ -61,11 +85,11 @@ jobs:
           to: leoeddy@gmail.com
           from: "GitHub Actions <leoeddy@gmail.com>"
           body: |
-            The file **words.txt** was not updated as expected at 12:10 AM Pacific.
+            The file **words.txt** was not updated as expected at 12:15 AM Pacific.
 
             Check the automation that pushes the new words list to GitHub.
 
             - Workflow: Words Watch (email on failure)
             - Repository: leoEddy/connection-helper
-            - Timestamp: ${{ steps.chk.outputs.lm_pt }}
-            - Reason: ${{ steps.chk.outputs.reason }}
+            - Timestamp (PT): ${{ needs.check.outputs.lm_pt }}
+            - Reason: ${{ needs.check.outputs.reason }}
