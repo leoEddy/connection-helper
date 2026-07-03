@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-07-03T00:12:41",
+  "createdAt": "2026-07-03T00:12:45",
   "sourceUrl": "https://www.nytimes.com/games/connections",
   "tiles": [
     {
@@ -11,10 +11,10 @@
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 147,
+        "top": 129,
         "width": 150,
         "x": 388,
-        "y": 147
+        "y": 129
       },
       "imageURL": ""
     },
@@ -27,10 +27,10 @@
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 147,
+        "top": 129,
         "width": 150,
         "x": 546,
-        "y": 147
+        "y": 129
       },
       "imageURL": ""
     },
@@ -43,10 +43,10 @@
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 147,
+        "top": 129,
         "width": 150,
         "x": 704,
-        "y": 147
+        "y": 129
       },
       "imageURL": ""
     },
@@ -59,10 +59,10 @@
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 147,
+        "top": 129,
         "width": 150,
         "x": 862,
-        "y": 147
+        "y": 129
       },
       "imageURL": ""
     },
@@ -75,10 +75,10 @@
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 235,
+        "top": 217,
         "width": 150,
         "x": 388,
-        "y": 235
+        "y": 217
       },
       "imageURL": ""
     },
@@ -91,10 +91,10 @@
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 235,
+        "top": 217,
         "width": 150,
         "x": 546,
-        "y": 235
+        "y": 217
       },
       "imageURL": ""
     },
@@ -107,10 +107,10 @@
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 235,
+        "top": 217,
         "width": 150,
         "x": 704,
-        "y": 235
+        "y": 217
       },
       "imageURL": ""
     },
@@ -123,10 +123,10 @@
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 235,
+        "top": 217,
         "width": 150,
         "x": 862,
-        "y": 235
+        "y": 217
       },
       "imageURL": ""
     },
@@ -139,10 +139,10 @@
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 323,
+        "top": 305,
         "width": 150,
         "x": 388,
-        "y": 323
+        "y": 305
       },
       "imageURL": ""
     },
@@ -155,10 +155,10 @@
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 323,
+        "top": 305,
         "width": 150,
         "x": 546,
-        "y": 323
+        "y": 305
       },
       "imageURL": ""
     },
@@ -171,10 +171,10 @@
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 323,
+        "top": 305,
         "width": 150,
         "x": 704,
-        "y": 323
+        "y": 305
       },
       "imageURL": ""
     },
@@ -187,10 +187,10 @@
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 323,
+        "top": 305,
         "width": 150,
         "x": 862,
-        "y": 323
+        "y": 305
       },
       "imageURL": ""
     },
@@ -203,10 +203,10 @@
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 411,
+        "top": 393,
         "width": 150,
         "x": 388,
-        "y": 411
+        "y": 393
       },
       "imageURL": ""
     },
@@ -219,10 +219,10 @@
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 411,
+        "top": 393,
         "width": 150,
         "x": 546,
-        "y": 411
+        "y": 393
       },
       "imageURL": ""
     },
@@ -235,10 +235,10 @@
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 411,
+        "top": 393,
         "width": 150,
         "x": 704,
-        "y": 411
+        "y": 393
       },
       "imageURL": ""
     },
@@ -251,10 +251,10 @@
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 411,
+        "top": 393,
         "width": 150,
         "x": 862,
-        "y": 411
+        "y": 393
       },
       "imageURL": ""
     }
