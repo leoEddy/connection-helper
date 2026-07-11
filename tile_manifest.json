@@ -1,11 +1,11 @@
 {
-  "createdAt": "2026-07-10T00:10:12",
+  "createdAt": "2026-07-11T00:10:09",
   "sourceUrl": "https://www.nytimes.com/games/connections",
   "tiles": [
     {
       "index": 1,
       "type": "text",
-      "label": "OUTKAST",
+      "label": "STILL",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -21,7 +21,7 @@
     {
       "index": 2,
       "type": "text",
-      "label": "DEPECHE MODE",
+      "label": "STILTS",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -37,7 +37,7 @@
     {
       "index": 3,
       "type": "text",
-      "label": "FRESH-BAKED",
+      "label": "SLINKY",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -53,7 +53,7 @@
     {
       "index": 4,
       "type": "text",
-      "label": "BALL GOWN",
+      "label": "AARDVARK",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -69,7 +69,7 @@
     {
       "index": 5,
       "type": "text",
-      "label": "DO NOT DISTURB",
+      "label": "WOODY",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -85,7 +85,7 @@
     {
       "index": 6,
       "type": "text",
-      "label": "À LA MODE",
+      "label": "GLASSY",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -101,7 +101,7 @@
     {
       "index": 7,
       "type": "text",
-      "label": "STRIKE A POSE",
+      "label": "CANNON",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -117,7 +117,7 @@
     {
       "index": 8,
       "type": "text",
-      "label": "AIRPLANE MODE",
+      "label": "BOCCE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -133,7 +133,7 @@
     {
       "index": 9,
       "type": "text",
-      "label": "ERASURE",
+      "label": "EBBING",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -149,7 +149,7 @@
     {
       "index": 10,
       "type": "text",
-      "label": "SAFE MODE",
+      "label": "BO PEEP",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -165,7 +165,7 @@
     {
       "index": 11,
       "type": "text",
-      "label": "DECADENT",
+      "label": "FLAT",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -181,7 +181,7 @@
     {
       "index": 12,
       "type": "text",
-      "label": "NEW ORDER",
+      "label": "UNICYCLE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -197,7 +197,7 @@
     {
       "index": 13,
       "type": "text",
-      "label": "HOTSPOT",
+      "label": "CALM",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -213,7 +213,7 @@
     {
       "index": 14,
       "type": "text",
-      "label": "PET SHOP BOYS",
+      "label": "JESSIE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -229,7 +229,7 @@
     {
       "index": 15,
       "type": "text",
-      "label": "MOLTEN",
+      "label": "TRAPEZE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -245,7 +245,7 @@
     {
       "index": 16,
       "type": "text",
-      "label": "LOCATION SERVICES",
+      "label": "TWIDDLE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
