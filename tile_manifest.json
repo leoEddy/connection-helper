@@ -1,260 +1,260 @@
 {
-  "createdAt": "2026-07-21T00:10:11",
+  "createdAt": "2026-07-22T00:10:12",
   "sourceUrl": "https://www.nytimes.com/games/connections",
   "tiles": [
     {
       "index": 1,
       "type": "text",
-      "label": "MUSIC",
+      "label": "WHITE STRIPES",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 102,
+        "top": 119,
         "width": 150,
         "x": 388,
-        "y": 102
+        "y": 119
       },
       "imageURL": ""
     },
     {
       "index": 2,
       "type": "text",
-      "label": "GRAM",
+      "label": "HOLE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 102,
+        "top": 119,
         "width": 150,
         "x": 546,
-        "y": 102
+        "y": 119
       },
       "imageURL": ""
     },
     {
       "index": 3,
       "type": "text",
-      "label": "DRIVER",
+      "label": "PINS",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 102,
+        "top": 119,
         "width": 150,
         "x": 704,
-        "y": 102
+        "y": 119
       },
       "imageURL": ""
     },
     {
       "index": 4,
       "type": "text",
-      "label": "VISION",
+      "label": "STROKES",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 102,
+        "top": 119,
         "width": 150,
         "x": 862,
-        "y": 102
+        "y": 119
       },
       "imageURL": ""
     },
     {
       "index": 5,
       "type": "text",
-      "label": "TUBE",
+      "label": "HIVES",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 190,
+        "top": 207,
         "width": 150,
         "x": 388,
-        "y": 190
+        "y": 207
       },
       "imageURL": ""
     },
     {
       "index": 6,
       "type": "text",
-      "label": "CROP",
+      "label": "HOOVES",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 190,
+        "top": 207,
         "width": 150,
         "x": 546,
-        "y": 190
+        "y": 207
       },
       "imageURL": ""
     },
     {
       "index": 7,
       "type": "text",
-      "label": "BOOK",
+      "label": "VINES",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 190,
+        "top": 207,
         "width": 150,
         "x": 704,
-        "y": 190
+        "y": 207
       },
       "imageURL": ""
     },
     {
       "index": 8,
       "type": "text",
-      "label": "APP",
+      "label": "SCORE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 190,
+        "top": 207,
         "width": 150,
         "x": 862,
-        "y": 190
+        "y": 207
       },
       "imageURL": ""
     },
     {
       "index": 9,
       "type": "text",
-      "label": "ORCHESTRATION",
+      "label": "SNAPS",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 278,
+        "top": 295,
         "width": 150,
         "x": 388,
-        "y": 278
+        "y": 295
       },
       "imageURL": ""
     },
     {
       "index": 10,
       "type": "text",
-      "label": "EXTENSION",
+      "label": "RASH",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 278,
+        "top": 295,
         "width": 150,
         "x": 546,
-        "y": 278
+        "y": 295
       },
       "imageURL": ""
     },
     {
       "index": 11,
       "type": "text",
-      "label": "TANK",
+      "label": "MANE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 278,
+        "top": 295,
         "width": 150,
         "x": 704,
-        "y": 278
+        "y": 295
       },
       "imageURL": ""
     },
     {
       "index": 12,
       "type": "text",
-      "label": "KINESIS",
+      "label": "TWEETS",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 278,
+        "top": 295,
         "width": 150,
         "x": 862,
-        "y": 278
+        "y": 295
       },
       "imageURL": ""
     },
     {
       "index": 13,
       "type": "text",
-      "label": "PROMPTER",
+      "label": "PAR",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 366,
+        "top": 383,
         "width": 150,
         "x": 388,
-        "y": 366
+        "y": 383
       },
       "imageURL": ""
     },
     {
       "index": 14,
       "type": "text",
-      "label": "HALTER",
+      "label": "REDNESS",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 366,
+        "top": 383,
         "width": 150,
         "x": 546,
-        "y": 366
+        "y": 383
       },
       "imageURL": ""
     },
     {
       "index": 15,
       "type": "text",
-      "label": "LYRICS",
+      "label": "TAIL",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 366,
+        "top": 383,
         "width": 150,
         "x": 704,
-        "y": 366
+        "y": 383
       },
       "imageURL": ""
     },
     {
       "index": 16,
       "type": "text",
-      "label": "PLUGIN",
+      "label": "ITCHING",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 366,
+        "top": 383,
         "width": 150,
         "x": 862,
-        "y": 366
+        "y": 383
       },
       "imageURL": ""
     }
