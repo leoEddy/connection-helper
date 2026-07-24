@@ -1,11 +1,11 @@
 {
-  "createdAt": "2026-07-23T00:10:06",
+  "createdAt": "2026-07-24T00:10:11",
   "sourceUrl": "https://www.nytimes.com/games/connections",
   "tiles": [
     {
       "index": 1,
       "type": "text",
-      "label": "JANGLE",
+      "label": "SPARK",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -21,7 +21,7 @@
     {
       "index": 2,
       "type": "text",
-      "label": "INTENSE",
+      "label": "CANTER",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -37,7 +37,7 @@
     {
       "index": 3,
       "type": "text",
-      "label": "ORANGE",
+      "label": "LLAMA",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -53,7 +53,7 @@
     {
       "index": 4,
       "type": "text",
-      "label": "FELINE",
+      "label": "JOG",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -69,7 +69,7 @@
     {
       "index": 5,
       "type": "text",
-      "label": "FEBRILE",
+      "label": "WALK",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -85,7 +85,7 @@
     {
       "index": 6,
       "type": "text",
-      "label": "BASEBALL",
+      "label": "YAK",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -101,7 +101,7 @@
     {
       "index": 7,
       "type": "text",
-      "label": "MARBLE",
+      "label": "SINGLE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -117,7 +117,7 @@
     {
       "index": 8,
       "type": "text",
-      "label": "APRON",
+      "label": "NONE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -133,7 +133,7 @@
     {
       "index": 9,
       "type": "text",
-      "label": "APPOINT",
+      "label": "RAMBLE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -149,7 +149,7 @@
     {
       "index": 10,
       "type": "text",
-      "label": "TERMINAL",
+      "label": "PROMPT",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -165,7 +165,7 @@
     {
       "index": 11,
       "type": "text",
-      "label": "EXCITED",
+      "label": "FRYER",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -181,7 +181,7 @@
     {
       "index": 12,
       "type": "text",
-      "label": "RUNWAY",
+      "label": "DRONE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -197,7 +197,7 @@
     {
       "index": 13,
       "type": "text",
-      "label": "FRENETIC",
+      "label": "REFRESH",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -213,7 +213,7 @@
     {
       "index": 14,
       "type": "text",
-      "label": "HANGAR",
+      "label": "STRIKEOUT",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -229,7 +229,7 @@
     {
       "index": 15,
       "type": "text",
-      "label": "DEPLANE",
+      "label": "BABBLE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
@@ -245,7 +245,7 @@
     {
       "index": 16,
       "type": "text",
-      "label": "GLOBE",
+      "label": "HOME RUN",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
