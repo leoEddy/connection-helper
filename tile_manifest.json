@@ -1,260 +1,260 @@
 {
-  "createdAt": "2026-08-10T00:10:05",
+  "createdAt": "2026-08-11T00:10:06",
   "sourceUrl": "https://www.nytimes.com/games/connections",
   "tiles": [
     {
       "index": 1,
       "type": "text",
-      "label": "BILLY GOAT",
+      "label": "TOAST",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 146,
+        "top": 119,
         "width": 150,
         "x": 388,
-        "y": 146
+        "y": 119
       },
       "imageURL": ""
     },
     {
       "index": 2,
       "type": "text",
-      "label": "BALANCE DUE",
+      "label": "AYE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 146,
+        "top": 119,
         "width": 150,
         "x": 546,
-        "y": 146
+        "y": 119
       },
       "imageURL": ""
     },
     {
       "index": 3,
       "type": "text",
-      "label": "WILLY-NILLY",
+      "label": "BRAVO",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 146,
+        "top": 119,
         "width": 150,
         "x": 704,
-        "y": 146
+        "y": 119
       },
       "imageURL": ""
     },
     {
       "index": 4,
       "type": "text",
-      "label": "MAIL DELIVERY",
+      "label": "SOLD",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 146,
+        "top": 119,
         "width": 150,
         "x": 862,
-        "y": 146
+        "y": 119
       },
       "imageURL": ""
     },
     {
       "index": 5,
       "type": "text",
-      "label": "BILL TO",
+      "label": "BET",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 234,
+        "top": 207,
         "width": 150,
         "x": 388,
-        "y": 234
+        "y": 207
       },
       "imageURL": ""
     },
     {
       "index": 6,
       "type": "text",
-      "label": "HELTER-SKELTER",
+      "label": "DONE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 234,
+        "top": 207,
         "width": 150,
         "x": 546,
-        "y": 234
+        "y": 207
       },
       "imageURL": ""
     },
     {
       "index": 7,
       "type": "text",
-      "label": "WILL CALL",
+      "label": "HISTORY",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 234,
+        "top": 207,
         "width": 150,
         "x": 704,
-        "y": 234
+        "y": 207
       },
       "imageURL": ""
     },
     {
       "index": 8,
       "type": "text",
-      "label": "THE DEVIL",
+      "label": "KNOWS",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 234,
+        "top": 207,
         "width": 150,
         "x": 862,
-        "y": 234
+        "y": 207
       },
       "imageURL": ""
     },
     {
       "index": 9,
       "type": "text",
-      "label": "DOCTOR STRANGE",
+      "label": "HARE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 322,
+        "top": 295,
         "width": 150,
         "x": 388,
-        "y": 322
+        "y": 295
       },
       "imageURL": ""
     },
     {
       "index": 10,
       "type": "text",
-      "label": "ORDER NUMBER",
+      "label": "GOING",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 322,
+        "top": 295,
         "width": 150,
         "x": 546,
-        "y": 322
+        "y": 295
       },
       "imageURL": ""
     },
     {
       "index": 11,
       "type": "text",
-      "label": "ANY OLD HOW",
+      "label": "THROUGH",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 322,
+        "top": 295,
         "width": 150,
         "x": 704,
-        "y": 322
+        "y": 295
       },
       "imageURL": ""
     },
     {
       "index": 12,
       "type": "text",
-      "label": "MOBILE TICKET",
+      "label": "TWICE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 322,
+        "top": 295,
         "width": 150,
         "x": 862,
-        "y": 322
+        "y": 295
       },
       "imageURL": ""
     },
     {
       "index": 13,
       "type": "text",
-      "label": "UNIT PRICE",
+      "label": "ONCE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 410,
+        "top": 383,
         "width": 150,
         "x": 388,
-        "y": 410
+        "y": 383
       },
       "imageURL": ""
     },
     {
       "index": 14,
       "type": "text",
-      "label": "COLONEL SANDERS",
+      "label": "SUNK",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 410,
+        "top": 383,
         "width": 150,
         "x": 546,
-        "y": 410
+        "y": 383
       },
       "imageURL": ""
     },
     {
       "index": 15,
       "type": "text",
-      "label": "PRINT-AT-HOME",
+      "label": "TUNG",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 410,
+        "top": 383,
         "width": 150,
         "x": 704,
-        "y": 410
+        "y": 383
       },
       "imageURL": ""
     },
     {
       "index": 16,
       "type": "text",
-      "label": "AT RANDOM",
+      "label": "USA",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 410,
+        "top": 383,
         "width": 150,
         "x": 862,
-        "y": 410
+        "y": 383
       },
       "imageURL": ""
     }
