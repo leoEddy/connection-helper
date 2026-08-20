@@ -1,260 +1,260 @@
 {
-  "createdAt": "2026-08-19T00:05:08",
+  "createdAt": "2026-08-20T00:05:08",
   "sourceUrl": "https://www.nytimes.com/games/connections",
   "tiles": [
     {
       "index": 1,
       "type": "text",
-      "label": "PICNIC",
+      "label": "TELEPHONE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 142,
+        "top": 113,
         "width": 150,
         "x": 388,
-        "y": 142
+        "y": 113
       },
       "imageURL": ""
     },
     {
       "index": 2,
       "type": "text",
-      "label": "BASKET",
+      "label": "APOSTROPHE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 142,
+        "top": 113,
         "width": 150,
         "x": 546,
-        "y": 142
+        "y": 113
       },
       "imageURL": ""
     },
     {
       "index": 3,
       "type": "text",
-      "label": "BREEZE",
+      "label": "OXFORD",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 142,
+        "top": 113,
         "width": 150,
         "x": 704,
-        "y": 142
+        "y": 113
       },
       "imageURL": ""
     },
     {
       "index": 4,
       "type": "text",
-      "label": "ANTS",
+      "label": "SERIAL",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 142,
+        "top": 113,
         "width": 150,
         "x": 862,
-        "y": 142
+        "y": 113
       },
       "imageURL": ""
     },
     {
       "index": 5,
       "type": "text",
-      "label": "BLANKET",
+      "label": "HAWAIIAN",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 230,
+        "top": 201,
         "width": 150,
         "x": 388,
-        "y": 230
+        "y": 201
       },
       "imageURL": ""
     },
     {
       "index": 6,
       "type": "text",
-      "label": "COCOA",
+      "label": "OKINA",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 230,
+        "top": 201,
         "width": 150,
         "x": 546,
-        "y": 230
+        "y": 201
       },
       "imageURL": ""
     },
     {
       "index": 7,
       "type": "text",
-      "label": "PICKLE",
+      "label": "RATCHET",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 230,
+        "top": 201,
         "width": 150,
         "x": 704,
-        "y": 230
+        "y": 201
       },
       "imageURL": ""
     },
     {
       "index": 8,
       "type": "text",
-      "label": "FOOT",
+      "label": "COMMA",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 230,
+        "top": 201,
         "width": 150,
         "x": 862,
-        "y": 230
+        "y": 201
       },
       "imageURL": ""
     },
     {
       "index": 9,
       "type": "text",
-      "label": "SNAP",
+      "label": "WHITE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 318,
+        "top": 289,
         "width": 150,
         "x": 388,
-        "y": 318
+        "y": 289
       },
       "imageURL": ""
     },
     {
       "index": 10,
       "type": "text",
-      "label": "BASE",
+      "label": "PIGMENT",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 318,
+        "top": 289,
         "width": 150,
         "x": 546,
-        "y": 318
+        "y": 289
       },
       "imageURL": ""
     },
     {
       "index": 11,
       "type": "text",
-      "label": "MASK",
+      "label": "ATOMIC",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 318,
+        "top": 289,
         "width": 150,
         "x": 704,
-        "y": 318
+        "y": 289
       },
       "imageURL": ""
     },
     {
       "index": 12,
       "type": "text",
-      "label": "SEOUL",
+      "label": "DRAGONFLY",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 318,
+        "top": 289,
         "width": 150,
         "x": 862,
-        "y": 318
+        "y": 289
       },
       "imageURL": ""
     },
     {
       "index": 13,
       "type": "text",
-      "label": "OBSCURE",
+      "label": "DIAVOLA",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 406,
+        "top": 377,
         "width": 150,
         "x": 388,
-        "y": 406
+        "y": 377
       },
       "imageURL": ""
     },
     {
       "index": 14,
       "type": "text",
-      "label": "RHEO",
+      "label": "CEDILLA",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 406,
+        "top": 377,
         "width": 150,
         "x": 546,
-        "y": 406
+        "y": 377
       },
       "imageURL": ""
     },
     {
       "index": 15,
       "type": "text",
-      "label": "CINCH",
+      "label": "MEAT LOVERS",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 406,
+        "top": 377,
         "width": 150,
         "x": 704,
-        "y": 406
+        "y": 377
       },
       "imageURL": ""
     },
     {
       "index": 16,
       "type": "text",
-      "label": "HIDE",
+      "label": "SOCIAL SECURITY",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 406,
+        "top": 377,
         "width": 150,
         "x": 862,
-        "y": 406
+        "y": 377
       },
       "imageURL": ""
     }
