@@ -1,260 +1,260 @@
 {
-  "createdAt": "2026-08-20T00:05:08",
+  "createdAt": "2026-08-21T07:17:21",
   "sourceUrl": "https://www.nytimes.com/games/connections",
   "tiles": [
     {
       "index": 1,
       "type": "text",
-      "label": "TELEPHONE",
+      "label": "WIMPY",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 113,
+        "top": 126,
         "width": 150,
         "x": 388,
-        "y": 113
+        "y": 126
       },
       "imageURL": ""
     },
     {
       "index": 2,
       "type": "text",
-      "label": "APOSTROPHE",
+      "label": "WHILE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 113,
+        "top": 126,
         "width": 150,
         "x": 546,
-        "y": 113
+        "y": 126
       },
       "imageURL": ""
     },
     {
       "index": 3,
       "type": "text",
-      "label": "OXFORD",
+      "label": "SLEEP",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 113,
+        "top": 126,
         "width": 150,
         "x": 704,
-        "y": 113
+        "y": 126
       },
       "imageURL": ""
     },
     {
       "index": 4,
       "type": "text",
-      "label": "SERIAL",
+      "label": "GENERATION",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 113,
+        "top": 126,
         "width": 150,
         "x": 862,
-        "y": 113
+        "y": 126
       },
       "imageURL": ""
     },
     {
       "index": 5,
       "type": "text",
-      "label": "HAWAIIAN",
+      "label": "LIFETIME",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 201,
+        "top": 214,
         "width": 150,
         "x": 388,
-        "y": 201
+        "y": 214
       },
       "imageURL": ""
     },
     {
       "index": 6,
       "type": "text",
-      "label": "OKINA",
+      "label": "ACTION",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 201,
+        "top": 214,
         "width": 150,
         "x": 546,
-        "y": 201
+        "y": 214
       },
       "imageURL": ""
     },
     {
       "index": 7,
       "type": "text",
-      "label": "RATCHET",
+      "label": "OXYGEN",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 201,
+        "top": 214,
         "width": 150,
         "x": 704,
-        "y": 201
+        "y": 214
       },
       "imageURL": ""
     },
     {
       "index": 8,
       "type": "text",
-      "label": "COMMA",
+      "label": "COMEBACK",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 201,
+        "top": 214,
         "width": 150,
         "x": 862,
-        "y": 201
+        "y": 214
       },
       "imageURL": ""
     },
     {
       "index": 9,
       "type": "text",
-      "label": "WHITE",
+      "label": "SHOWTIME",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 289,
+        "top": 302,
         "width": 150,
         "x": 388,
-        "y": 289
+        "y": 302
       },
       "imageURL": ""
     },
     {
       "index": 10,
       "type": "text",
-      "label": "PIGMENT",
+      "label": "KARATE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 289,
+        "top": 302,
         "width": 150,
         "x": 546,
-        "y": 289
+        "y": 302
       },
       "imageURL": ""
     },
     {
       "index": 11,
       "type": "text",
-      "label": "ATOMIC",
+      "label": "SUNDANCE",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 289,
+        "top": 302,
         "width": 150,
         "x": 704,
-        "y": 289
+        "y": 302
       },
       "imageURL": ""
     },
     {
       "index": 12,
       "type": "text",
-      "label": "DRAGONFLY",
+      "label": "PLACES",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 289,
+        "top": 302,
         "width": 150,
         "x": 862,
-        "y": 289
+        "y": 302
       },
       "imageURL": ""
     },
     {
       "index": 13,
       "type": "text",
-      "label": "DIAVOLA",
+      "label": "WATER",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 388,
-        "top": 377,
+        "top": 390,
         "width": 150,
         "x": 388,
-        "y": 377
+        "y": 390
       },
       "imageURL": ""
     },
     {
       "index": 14,
       "type": "text",
-      "label": "CEDILLA",
+      "label": "BLUE MOON",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 546,
-        "top": 377,
+        "top": 390,
         "width": 150,
         "x": 546,
-        "y": 377
+        "y": 390
       },
       "imageURL": ""
     },
     {
       "index": 15,
       "type": "text",
-      "label": "MEAT LOVERS",
+      "label": "CURTAIN UP",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 704,
-        "top": 377,
+        "top": 390,
         "width": 150,
         "x": 704,
-        "y": 377
+        "y": 390
       },
       "imageURL": ""
     },
     {
       "index": 16,
       "type": "text",
-      "label": "SOCIAL SECURITY",
+      "label": "NUTRITION",
       "imagePath": "",
       "hasMedia": false,
       "rect": {
         "height": 80,
         "left": 862,
-        "top": 377,
+        "top": 390,
         "width": 150,
         "x": 862,
-        "y": 377
+        "y": 390
       },
       "imageURL": ""
     }
